@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
+import { 
+  View, 
+  Text, 
+  StyleSheet, 
+  Image, 
+  Dimensions, 
+  ScrollView
+} from 'react-native';
 import Colors from '../constants/colors';
 import TitleText from '../components/TitleText';
 import BodyText from '../components/BodyText';
@@ -36,7 +43,8 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingVertical: 10
   },
   imageContainer: {
     width: Dimensions.get('window').width * 0.7,

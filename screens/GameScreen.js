@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { View, Text, StyleSheet, Alert, FlatList, Dimensions } from 'react-native';
+import * as ScreenOrientation from 'expo-screen-orientation';
 import { Ionicons } from '@expo/vector-icons';
 import DefaultStyles from '../constants/default-styles';
 import NumberContainer from '../components/NumberContainer';
@@ -27,6 +28,8 @@ const renderListItem = (listLength, itemData) => (
 );
 
 const GameScreen = ({ userChoice, onGameOver }) => {
+  // ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT);
+
   const initialGuess = generateRandomBetween(1, 100, userChoice);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
   const [passGuesses, setPassGuesses] = useState([ initialGuess.toString() ]);
@@ -42,6 +45,7 @@ const GameScreen = ({ userChoice, onGameOver }) => {
 
   useEffect(() => {
     const updateLayout = () => {
+      
       setAvailableDeviceWidth(Dimensions.get('window').width);
       setAvailableDeviceHeight(Dimensions.get('window').height);
     }
